@@ -124,21 +124,21 @@ public class Code04_MaxSubBSTSize {
         boolean isAllBST = false;
 
         if (
-                // 左、右树整体需要是搜索二叉树
+            // 左、右树整体需要是搜索二叉树
                 (leftInfo == null ? true : leftInfo.isAllBST)
-                &&
-                (rightInfo == null ? true : rightInfo.isAllBST)
-                &&
-                // 左树最大值 < x
-                (leftInfo == null ? true : leftInfo.max < X.value)
-                &&
-                (rightInfo == null ? true : leftInfo.min > X.value)
+                        &&
+                        (rightInfo == null ? true : rightInfo.isAllBST)
+                        &&
+                        // 左树最大值 < x
+                        (leftInfo == null ? true : leftInfo.max < X.value)
+                        &&
+                        (rightInfo == null ? true : leftInfo.min > X.value)
         ) {
             // 求以x为头的所有节点数
             maxSubBSTSize =
                     (leftInfo == null ? 0 : leftInfo.maxSubBSTSize)
-                    + (rightInfo == null ? 0 : rightInfo.maxSubBSTSize)
-                    + 1;
+                            + (rightInfo == null ? 0 : rightInfo.maxSubBSTSize)
+                            + 1;
             isAllBST = true;
 
         }
